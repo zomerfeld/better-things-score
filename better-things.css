@@ -1,0 +1,171 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, button, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html {
+  line-height: 1.5;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal; 
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+h1, h2, h3, h4, h5, h6 { 
+  font-weight: 400; 
+  line-height: 1.1; 
+}
+
+h1 {
+  font-size: 4.2rem;
+  line-height: 110%;
+  margin: 2.1rem 0 1.68rem 0;
+}
+
+h2 {
+  font-size: 3.56rem;
+  line-height: 110%;
+  margin: 1.78rem 0 1.424rem 0;
+}
+
+h3 {
+  font-size: 2.92rem;
+  line-height: 110%;
+  margin: 1.46rem 0 1.168rem 0;
+}
+
+h4 {
+  font-size: 2.28rem;
+  line-height: 110%;
+  margin: 1.14rem 0 0.912rem 0;
+}
+
+h5 {
+  font-size: 1.64rem;
+  line-height: 110%;
+  margin: 0.82rem 0 0.656rem 0;
+}
+
+h6 {
+  font-size: 1rem;
+  line-height: 110%;
+  margin: 0.5rem 0 0.4rem 0;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: 500;
+}
+
+small {
+  font-size: 75%;
+}
+
+p {
+  margin: 1.46rem 0;
+}
+
+a {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #009688;
+  text-decoration: none;
+}
+
+.question-navigator {
+  display: flex;
+}
+
+.question-navigator .control {
+  padding: 0 10px;
+  margin: auto;
+  font-size: 50px;
+}
+
+.question-viewer {
+  margin: auto;
+}
+
+.question .category {
+  margin-bottom: 10px;
+}
+
+.question .question-text {
+  margin-bottom: 30px;
+}
+
+.question .question-answer {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  text-indent: -9999px;
+  white-space: nowrap;
+}
+
+.question .question-answer.totally-unimportant {
+  background-color: red;
+}
+
+.question .question-answer.unimportant {
+  background-color: orange;
+}
+
+.question .question-answer.no-opinion {
+  background-color: gray;
+}
+
+.question .question-answer.important {
+  background-color: yellow;
+}
+
+.question .question-answer.totally-important {
+  background-color: green;
+}

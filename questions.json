@@ -1,0 +1,32 @@
+[
+  {
+    "index": 0,
+    "category": "Interusability",
+    "text": "Does it scale? Can you connect other products to it to increase its value to your life?"
+  },
+  {
+    "index": 1,
+    "category": "Health & Safety",
+    "text": "If it stops working (outage), will someone die? Get injured? "
+  },
+  {
+    "index": 2,
+    "category": "Privacy",
+    "text": "Can you stop the device from recording data?"
+  },
+  {
+    "index": 3,
+    "category": "Context",
+    "text": "Does it blend into the background of life?"
+  },
+  {
+    "index": 4,
+    "category": "Sustainability",
+    "text": "Is it designed to be replaceable / upgradeable? "
+  },
+  {
+    "index": 5,
+    "category": "Technological Opportunities",
+    "text": "Does it utilize implied or implicit input? "
+  }
+]

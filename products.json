@@ -1,0 +1,22 @@
+[
+  {
+     "name": "yale",
+     "base": 46,
+     "answers": [ 4, 3, 10, 8, -2, 0 ]
+  },
+  {
+     "name": "kevo",
+     "base": 63,
+     "answers": [ 8, -5, -5, 10, 6, 10 ]
+  },
+  {
+     "name": "august",
+     "base": 75,
+     "answers": [ 10, 3, -8, 14, -6, 6 ]
+  },
+  {
+     "name": "dana",
+     "base": 32,
+     "answers": [ 8, 3, 0, 10, 6, 10 ]
+  }
+]

@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <link href="better-things.css" rel="stylesheet">
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous">
+    </script>
+    <script>
+$(function() {
+  function refresh() {
+    $.get('/calculate').then(function(data) {
+      var html = data.map(function(result) {
+        return [
+          '<div>',
+          '  <span class="">',
+          result.name,
+          '  </span>',
+          '  <span class="">',
+          result.score,
+          '  </span>',
+          '</div>'
+        ].join('');
+      }).join('');
+
+      $('body').empty();
+      $('body').append(html);
+      setTimeout(refresh, 500);
+    });
+  }
+
+  refresh();
+});
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
