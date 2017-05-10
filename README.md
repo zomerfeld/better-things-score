@@ -7,6 +7,13 @@ project to type `node server`.  The app will be accessible at
 
 `http://localhost:3000/results`
 
+on Heroku use these links:
+
+`https://better-things-score.herokuapp.com/weighting`
+
+`https://better-things-score.herokuapp.com/results`
+
+
 ## How do I change the data.
 
 The question data is in `questions.json`, the product data is in
