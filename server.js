@@ -6,6 +6,9 @@ const port = 3000
 const weighting = fs.readFileSync('weighting.html', 'utf8');
 const results = fs.readFileSync('results.html', 'utf8');
 const css = fs.readFileSync('better-things.css', 'utf8');
+const bronze = fs.readFileSync('bronze.png');
+const silver = fs.readFileSync('silver.png');
+const gold = fs.readFileSync('gold.png');
 
 let products = require('./products.json');
 let questions = require('./questions.json');
@@ -36,6 +39,14 @@ const sendCSS = (response, css) => {
    'Content-Type': 'text/css'
   });
   response.end(css);
+  return;
+}
+
+const sendPNG = (response, png) => {
+  response.writeHead(200, {
+   'Content-Type': 'image/png'
+  });
+  response.end(png, 'binary');
   return;
 }
 
@@ -80,6 +91,18 @@ const requestHandler = (request, response) => {
 
   if (request.url == "/better-things.css") {
     return sendCSS(response, css);
+  }
+
+  if (request.url == "/gold.png") {
+    return sendPNG(response, gold);
+  }
+
+  if (request.url == "/silver.png") {
+    return sendPNG(response, silver);
+  }
+
+  if (request.url == "/bronze.png") {
+    return sendPNG(response, bronze);
   }
 
   response.end("OH NO");

@@ -178,3 +178,44 @@ a {
   color: white;
   background-color: #009688;
 }
+
+.product {
+  clear: both;
+  margin-bottom: 10px;
+}
+
+.product .badge {
+  display: flex;
+  float: left;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+
+.product .badge .badge-text {
+  margin: auto;
+}
+
+.product .badge.gold {
+  background-color: gold;
+}
+
+.product .badge.silver {
+  background-color: silver;
+}
+
+.product .badge.bronze {
+  background-color: #CD7F32;
+  background-image: url("/bronze.png");
+  background-size: 100% 100%;
+}
+
+.product .score {
+  display: flex;
+  height: 250px;
+}
+
+.product .score .score-text {
+  font-size: 175px;
+  margin: auto
+}

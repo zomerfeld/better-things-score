@@ -8,17 +8,31 @@
     </script>
     <script>
 $(function() {
+  function badgeTypeFor(result) {
+    let badgeType = "bronze";
+    if (result.score > 100) {
+      badgeType = 'silver';
+    }
+
+    if (result.score > 200) {
+      badgeType = 'gold';
+    }
+
+    return badgeType;
+  }
+
   function refresh() {
     $.get('/calculate').then(function(data) {
       var html = data.map(function(result) {
+        let badgeType = badgeTypeFor(result);
         return [
-          '<div>',
-          '  <span class="">',
-          result.name,
-          '  </span>',
-          '  <span class="">',
-          result.score,
-          '  </span>',
+          '<div class="product">',
+          '  <div class="badge ' + badgeType + '">',
+          '    <span class="badge-text">' + result.name + '</span>',
+          '  </div>',
+          '  <div class="score">',
+          '    <span class="score-text">' + result.score + '</span>',
+          '  </div>',
           '</div>'
         ].join('');
       }).join('');
