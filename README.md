@@ -2,7 +2,8 @@
 
 You'll need node installed.  Then, from the directory you've cloned this
 project to type `node server`.  The app will be accessible at
-`localhost:3000`.
+`http://localhost:3000/weighting`
+`http://localhost:3000/results`
 
 ## How do I change the data.
 
