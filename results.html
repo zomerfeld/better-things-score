@@ -26,18 +26,16 @@ $(function() {
       var html = data.map(function(result) {
         let badgeType = badgeTypeFor(result);
         return [
-          '<div class="product">',
+          '<div class="badge-container">',
           '  <div class="badge ' + badgeType + '">',
-          '    <span class="badge-text">' + result.name + '</span>',
+          '     <span class="badge-text">' + result.score + '</span>',
           '  </div>',
-          '  <div class="score">',
-          '    <span class="score-text">' + result.score + '</span>',
-          '  </div>',
-          '</div>'
+          '</div>',
         ].join('');
       }).join('');
 
       $('body').empty();
+      $('body').addClass('results');
       $('body').append(html);
       setTimeout(refresh, 500);
     });
