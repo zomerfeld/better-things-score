@@ -82,7 +82,7 @@ const requestHandler = (request, response) => {
 
       return {
         name: product.name,
-        score: score
+        score: Math.round(score)
       }
     });
 
