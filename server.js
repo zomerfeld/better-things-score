@@ -2,7 +2,7 @@ const http = require('http')
 const fs = require('fs');
 const url = require('url') ;
 
-const port = 3000
+const port = process.env.PORT || 3000;
 const weighting = fs.readFileSync('weighting.html', 'utf8');
 const results = fs.readFileSync('results.html', 'utf8');
 const css = fs.readFileSync('better-things.css', 'utf8');
