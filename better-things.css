@@ -129,7 +129,7 @@ a {
   font-size: 50px;
 }
 
-.question-viewer {
+.middle, .question-viewer {
   margin: auto;
 }
 
@@ -143,6 +143,7 @@ a {
 
 .question .question-answers {
   margin-top: 10px;
+  overflow: hidden;
 }
 
 .question .question-answer-container {
@@ -177,6 +178,13 @@ a {
 .question .question-answer.selected {
   color: white;
   background-color: #009688;
+}
+
+.reset {
+  clear: both;
+  display: block;
+  margin-top: 20px;
+  font-size: smaller;
 }
 
 .product {

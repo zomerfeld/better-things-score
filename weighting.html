@@ -26,6 +26,13 @@ $(function() {
     updateQuestion();
   }
 
+  function reset(data) {
+    currentQuestion = 0;
+    questions = data;
+    initialize();
+    updateQuestion();
+  }
+
   function updateQuestion() {
     $('.question-viewer').empty();
     $('.question-viewer').append(renderQuestion(questions[currentQuestion]));
@@ -42,11 +49,15 @@ $(function() {
 
   function initialize() {
     $('body').removeClass();
+    $('body').empty();
     $('body').addClass('question-navigator');
     $('body').append([
-        '<a class="control previous" href="#">&lt;</a>',
-        '<div class="question-viewer"></div>',
-        '<a class="control next" href="#">&gt;</a>'
+      '<a class="control previous" href="#">&lt;</a>',
+      '<div class="middle">',
+      '  <div class="question-viewer"></div>',
+      '  <a class="reset" href="#">reset weights</a>',
+      '</div>',
+      '<a class="control next" href="#">&gt;</a>'
     ].join(''));
 
     $('.previous').on('click', function(e) {
@@ -59,6 +70,12 @@ $(function() {
       e.stopPropagation();
       e.preventDefault();
       next();
+    });
+
+    $('.reset').on('click', function(e) {
+      e.stopPropagation();
+      e.preventDefault();
+      $.get('/reset').then(reset);
     });
   }
 
@@ -108,15 +125,11 @@ $(function() {
       renderAnswer(question, 5, 'Very important'),
       '    </div>',
       '  </div>',
-      '</div>',
+      '</div>'
     ].join('');
   }
 
-  $.get('/questions').then(function(data) {
-    questions = data;
-    initialize();
-    updateQuestion();
-  });
+  $.get('/questions').then(reset);
 });
     </script>
   </head>

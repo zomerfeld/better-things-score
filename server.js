@@ -89,6 +89,12 @@ const requestHandler = (request, response) => {
     sendJSON(response, scores);
   }
 
+  if (request.url.startsWith("/reset")) {
+    questions.forEach((question) => question.weight = 1);
+
+    sendJSON(response, questions);
+  }
+
   if (request.url == "/better-things.css") {
     return sendCSS(response, css);
   }
