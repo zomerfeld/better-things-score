@@ -1,0 +1,20 @@
+{
+  "name": "better-things",
+  "version": "1.0.0",
+  "description": "You'll need node installed.  Then, from the directory you've cloned this project to type `node server`.  The app will be accessible at",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zomerfeld/better-things-score.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zomerfeld/better-things-score/issues"
+  },
+  "homepage": "https://github.com/zomerfeld/better-things-score#readme"
+}
