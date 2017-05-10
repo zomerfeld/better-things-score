@@ -22,6 +22,9 @@ $(function() {
   }
 
   function prev() {
+    if (currentQuestion == 0) {
+      currentQuestion = questions.length;
+    }
     currentQuestion = (currentQuestion - 1) % questions.length;
     updateQuestion();
   }
