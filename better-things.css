@@ -141,31 +141,40 @@ a {
   margin-bottom: 30px;
 }
 
+.question .question-answers {
+  margin-top: 10px;
+}
+
+.question .question-answer-container {
+  display: block;
+  float: left;
+}
+
 .question .question-answer {
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  text-indent: -9999px;
+  display: block;
+  border: solid 1px gray;
+  border-left: none;
+  padding: 10px;
+  width: 75px;
+}
+
+.question .question-answer-label {
+  margin-top: 10px;
+  font-size: x-small;
   white-space: nowrap;
+  width: 75px;
 }
 
-.question .question-answer.totally-unimportant {
-  background-color: red;
+.question .question-answer.first {
+  border-left: solid 1px gray;
+  border-radius: 2px 0 0 2px;
 }
 
-.question .question-answer.unimportant {
-  background-color: orange;
+.question .question-answer.last {
+  border-radius: 0 2px 2px 0;
 }
 
-.question .question-answer.no-opinion {
-  background-color: gray;
-}
-
-.question .question-answer.important {
-  background-color: yellow;
-}
-
-.question .question-answer.totally-important {
-  background-color: green;
+.question .question-answer.selected {
+  color: white;
+  background-color: #009688;
 }

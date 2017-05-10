@@ -39,7 +39,6 @@ const sendCSS = (response, css) => {
   return;
 }
 
-
 const requestHandler = (request, response) => {
   console.log(request.url)
   if (request.url == "/weighting") {

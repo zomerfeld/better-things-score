@@ -8,6 +8,7 @@
     </script>
     <script>
 $(function() {
+  const SCORES = [.2, .5, 1, 1.5, 2];
   let questions = [];
   let currentQuestion = 0;
 
@@ -15,34 +16,22 @@ $(function() {
     return "/update?index=" + question.index + "&weight=" + weight;
   }
 
-  function thanks() {
-    $('body').removeClass();
-    $('body').addClass('thanks');
-    $('body').empty();
-    $('body').append('THANKS');
-  }
-
   function next() {
-    if (currentQuestion == questions.length - 1) {
-      thanks();
-      return;
-    }
-
-    currentQuestion++;
+    currentQuestion = (currentQuestion + 1) % questions.length;
     updateQuestion();
   }
 
   function prev() {
-    if (currentQuestion > 0) {
-      currentQuestion--;
-      updateQuestion();
-    }
+    currentQuestion = (currentQuestion - 1) % questions.length;
+    updateQuestion();
   }
 
   function updateQuestion() {
     $('.question-viewer').empty();
     $('.question-viewer').append(renderQuestion(questions[currentQuestion]));
     $('.question-viewer .submit').on('click', function(e) {
+      let weight = $(this).data('weight');
+      questions[currentQuestion].weight = weight;
       $.get($(this).attr('href')).then(function() {
         next();
       });
@@ -73,6 +62,33 @@ $(function() {
     });
   }
 
+  function renderAnswer(question, index, label) {
+    let value = SCORES[index - 1];
+    let classes = ['question-answer', 'submit'];
+    let labelBox = '<div>&nbsp;</div>';
+    if (question.weight == value) {
+      classes.push('selected');
+    }
+    if (index == 1) {
+      classes.push('first');
+    }
+
+    if (index == SCORES.length) {
+      classes.push('last');
+    }
+
+    if (label) {
+      labelBox = '<div class="question-answer-label">' + label + '</div>';
+    }
+
+    return [
+      '<div class="question-answer-container">',
+      '  <a class="' + classes.join(' ') + '" href="' + updateUrl(question, value)  + '" data-weight="' + value + '">' + index + '</a>',
+      labelBox,
+      '</div>'
+    ].join(' ');
+  }
+
   function renderQuestion(question) {
     return [
       '<div class="question">',
@@ -82,13 +98,14 @@ $(function() {
       '  <div class="question-text">',
       question.text,
       '  </div>',
-      '  <div class="">',
-      '    <div class="">',
-      '      <a class="question-answer submit totally-unimportant" href="' + updateUrl(question, .2)  + '">totally unimportant</a>',
-      '      <a class="question-answer submit unimportant" href="' + updateUrl(question, .5)  + '">unimportant</a>',
-      '      <a class="question-answer submit no-opinion" href="' + updateUrl(question, 1)  + '">no opinion/a>',
-      '      <a class="question-answer submit important" href="' + updateUrl(question, 1.5)  + '">important</a>',
-      '      <a class="question-answer submit totally-important" href="' + updateUrl(question, 2)  + '">totally important</a>',
+      '  <div>',
+      '    How important do you think this question in?',
+      '    <div class="question-answers">',
+      renderAnswer(question, 1, 'Unimportant'),
+      renderAnswer(question, 2),
+      renderAnswer(question, 3, 'Somewhat important'),
+      renderAnswer(question, 4),
+      renderAnswer(question, 5, 'Very important'),
       '    </div>',
       '  </div>',
       '</div>',
