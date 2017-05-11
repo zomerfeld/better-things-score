@@ -267,8 +267,8 @@ a {
   display: flex;
   flex-direction: column;
   background-color: #000;
-  margin-top: 114px; /*change after resizing for show */
-  margin-right:35.5%; /*change after resizing for show */
+  margin-top: 260px; /*change after resizing for show */
+  margin-right:9.2%; /*change after resizing for show */
 }
 
 .results .badge-container {
@@ -281,9 +281,9 @@ a {
   float: left;
   border-radius: 50%;
   /*Change after reszing for show */
-  width: 100px; 
-  height: 100px;
-  margin-bottom: 36px;
+  width: 80px; 
+  height: 80px;
+  margin-bottom: 19px;
   /*Change after reszing for show */ 
 }
 
@@ -291,9 +291,9 @@ a {
   font-family: 'brandon-grotesque','van_condensedregular',sans-serif;
   font-weight: bold;
   margin: auto;
-  font-size: 40px; /*change after resizing for show */
+  font-size: 30px; /*change after resizing for show */
   color: white;
-  padding-top: 18px; /*change after resizing for show */
+  padding-top: 12px; /*change after resizing for show */
   letter-spacing:-0.05em;
 
 }
