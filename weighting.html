@@ -40,13 +40,17 @@ $(function() {
     $('.question-viewer').empty();
     $('.question-viewer').append(renderQuestion(questions[currentQuestion]));
     $('.question-viewer .submit').on('click', function(e) {
-      let weight = $(this).data('weight');
-      questions[currentQuestion].weight = weight;
-      $.get($(this).attr('href')).then(function() {
-        next();
-      });
       e.stopPropagation();
       e.preventDefault();
+
+      let weight = $(this).data('weight');
+      let url = $(this).attr('href');
+      $('.question-answer.selected').addClass('deselected-pending');
+      $(this).addClass('selected-pending');
+      questions[currentQuestion].weight = weight;
+      setTimeout(function() {
+        $.get(url).then(next);
+      }, 250);
     });
   }
 

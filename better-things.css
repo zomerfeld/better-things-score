@@ -252,7 +252,16 @@ a {
   background-color: #009688;
 }
 
+.question .question-answer.deselected-pending {
+  color: white;
+  background-color: gray;
+}
 
+.question .question-answer.selected-pending {
+  color: white;
+  /*background-color: #0093cf;*/
+  background-color: #009688;
+}
 
 .results {
   display: flex;
