@@ -9,6 +9,9 @@ const css = fs.readFileSync('better-things.css', 'utf8');
 const bronze = fs.readFileSync('bronze.png');
 const silver = fs.readFileSync('silver.png');
 const gold = fs.readFileSync('gold.png');
+const vanCondensedWoff = fs.readFileSync('van_condensed-regular-webfont.woff');
+const vanCondensedWoff2 = fs.readFileSync('van_condensed-regular-webfont.woff2');
+const entypoWoff = fs.readFileSync('Entypo-webfont.woff');
 
 let products = require('./products.json');
 let questions = require('./questions.json');
@@ -47,6 +50,22 @@ const sendPNG = (response, png) => {
    'Content-Type': 'image/png'
   });
   response.end(png, 'binary');
+  return;
+}
+
+const sendWOFF = (response, woff) => {
+  response.writeHead(200, {
+   'Content-Type': 'application/font-woff'
+  });
+  response.end(woff, 'binary');
+  return;
+}
+
+const sendWOFF2 = (response, woff) => {
+  response.writeHead(200, {
+   'Content-Type': 'application/font-woff2'
+  });
+  response.end(woff, 'binary');
   return;
 }
 
@@ -109,6 +128,18 @@ const requestHandler = (request, response) => {
 
   if (request.url == "/bronze.png") {
     return sendPNG(response, bronze);
+  }
+
+  if (request.url == "/van_condensed-regular-webfont.woff") {
+    return sendWOFF(response, vanCondensedWoff);
+  }
+
+  if (request.url == "/van_condensed-regular-webfont.woff2") {
+    return sendWOFF2(response, vanCondensedWoff2);
+  }
+
+  if (request.url == "/Entypo-webfont.woff") {
+    return sendWOFF(response, entypoWoff);
   }
 
   response.end("OH NO");

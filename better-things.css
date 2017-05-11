@@ -3,6 +3,25 @@
    License: none (public domain)
 */
 
+
+@font-face {
+    font-family: 'van_condensedregular';
+    src: url('van_condensed-regular-webfont.woff2') format('woff2'),
+         url('van_condensed-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'entyporegular';
+    src: url('Entypo-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, button, cite, code,
@@ -22,6 +41,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -119,11 +139,17 @@ a {
   text-decoration: none;
 }
 
+/**** ADD CSS HERE ****/
+ body {
+  font-family: 'van_condensedregular';
+}
+
 .question-navigator {
   display: flex;
 }
 
 .question-navigator .control {
+  font-family: "Entyporegular";
   padding: 0 10px;
   margin: auto;
   font-size: 50px;
@@ -219,9 +245,12 @@ a {
 }
 
 .results .badge .badge-text {
+  font-family: 'brandon-grotesque','van_condensedregular',sans-serif;
+  font-weight: bold;
   margin: auto;
-  font-size: 105px;
+  font-size: 77px;
   color: white;
+  padding-top: 18px;
 }
 
 .results .badge.gold {
