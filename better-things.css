@@ -267,7 +267,7 @@ a {
   display: flex;
   flex-direction: column;
   background-color: #000;
-  margin-top: 16px; /*change after resizing for show */
+  margin-top: 24px; /*change after resizing for show */
   margin-right:40%; /*change after resizing for show */
 }
 
