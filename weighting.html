@@ -50,7 +50,7 @@ $(function() {
       questions[currentQuestion].weight = weight;
       setTimeout(function() {
         $.get(url).then(next);
-      }, 250);
+      }, 400); //delay before moving to next page
     });
   }
 
